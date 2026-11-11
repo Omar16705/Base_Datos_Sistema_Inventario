@@ -21,7 +21,27 @@ Create database Sistema_Inventario_Comedor
 	INSERT INTO USUARIO VALUES ('Admin_Comedor','$2a$12$iRT/GWkMMaSLuyY15okaP.kp.0gSYSJS87k1lDkqMNhnpyIVmJTYy',1);
 
 	
-	
+	CREATE TABLE ENTRADAS_BODEGA(
+	id_entrada int identity(1,1) primary key,
+	cantidad int not null,
+	unidad_medida varchar(20) not null,
+	nombre_producto varchar(50),
+	vencimiento date not null,
+	bodega varchar(50),
+	estante_refri varchar (50)
+	);
+
+	CREATE TABLE SALIDAS_BODEGA(
+	id_salida int identity(1,1) primary key,
+	cantidad int not null,
+	unidad_medida varchar(20) not null,
+	nombre_producto varchar(50),
+	vencimiento date not null,
+	bodega varchar(50),
+	estante_refri varchar (50),
+	uso varchar(MAX)
+	);
+
 
 	create View vw_Login 
 as
